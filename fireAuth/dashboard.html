@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FireAuth</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 shadow-lg border-b border-gray-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-xl font-bold text-indigo-400">FireAuth</div>
+                <div class="flex items-center space-x-4">
+                    <span id="userEmail" class="text-gray-300 hidden sm:block"></span>
+                    <button id="logoutBtn" 
+                        class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500 transition duration-200">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-gray-800 rounded-xl shadow-2xl p-6 border border-gray-700">
+            <h1 class="text-2xl sm:text-3xl font-bold text-white mb-4">Welcome to Your Dashboard</h1>
+            <p class="text-gray-300">
+                This is your protected dashboard page. Only authenticated users can see this content.
+            </p>
+            
+            <!-- User Profile Section -->
+            <div class="mt-8">
+                <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4">Your Profile</h2>
+                <div class="bg-gray-700 p-6 rounded-lg border border-gray-600">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-300">Email</label>
+                            <p id="profileEmail" class="text-white text-lg"></p>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-sm font-medium text-gray-300">Account Created</label>
+                            <p id="accountCreated" class="text-white text-lg"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Features Section -->
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-700 p-6 rounded-lg border border-gray-600">
+                    <h3 class="text-lg font-semibold text-white mb-2">Security Status</h3>
+                    <p class="text-green-400">Your account is secure</p>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg border border-gray-600">
+                    <h3 class="text-lg font-semibold text-white mb-2">Last Login</h3>
+                    <p class="text-gray-300" id="lastLogin">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html> 
+</html> 
